@@ -1,5 +1,4 @@
 use clap::{command, Arg, ArgAction};
-// use std::env;
 
 fn main() {
     let matches = command!()
