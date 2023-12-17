@@ -4,7 +4,7 @@ use clap::{command, Arg, ArgAction};
 fn main() {
     let matches = command!()
         .arg(Arg::new("no_newline").help("Do not print newline").short('n').long("no_newline").action(ArgAction::SetTrue))
-        .arg(Arg::new("input").help("Inputs to print").default_value("").action(ArgAction::Append))// .arg(arg!(--brand <VALUE>))
+        .arg(Arg::new("input").help("Inputs to print").default_value("").action(ArgAction::Append).trailing_var_arg(true))
         .get_matches();
 
     let no_newline = *matches.get_one::<bool>("no_newline").unwrap();
